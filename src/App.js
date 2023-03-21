@@ -1,5 +1,5 @@
 
-import { Route, Router, Routes } from 'react-router';
+import { createBrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom';
 import './App.css';
 import Footer from './components/footer';
 import Navbar from './components/navbar';
@@ -11,20 +11,38 @@ import Home from './pages/home';
 import OfficeBearers from './pages/officeBearers';
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path:"/",
+      element:<Home/>,
+    },
+    {
+      path:"/aboutus",
+      element:<AboutUs/>
+    },
+    {
+      path:"/contact",
+      element:<ContactPage/>
+    },
+    {
+      path:"/office",
+      element:<OfficeBearers/>
+    },
+    {
+      path:"/allevents",
+      element:<AllEvents/>,
+    },
+    {
+      path:"/events",
+      element:<Events/>,
+    },
+  ])
   return (
-    <>
-      <Router>
-        <Navbar/>
-        <Routes>
-          <Route path='/aboutus' element={<AboutUs/>}/>
-          <Route path='/allevents' element={<AllEvents/>}/>
-          <Route path='/contact' element={<ContactPage/>}/>
-          <Route path='/events' element={<Events/>}/>
-          <Route path='/home' element={<Home/>}/>
-          <Route path='/office' element={<OfficeBearers/>}/>
-        </Routes>
-        <Footer/>
-      </Router>
+   <> 
+    
+    
+      <Navbar/>
+      <RouterProvider router={router}/>
 
     </>
   );
