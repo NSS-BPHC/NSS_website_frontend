@@ -9,10 +9,10 @@ const styles : Record<any, SxProps> = {
         pr:0,
     },
     appbar:{
-        background: "none" 
+        backgroundColor:colors.grayDark,
     },
     logo:{
-        height: { xs: 30, sm: 40, md: 40 },
+        height: { xs: 30, sm: 80, md: 80 },
         pl:5,
         my: 2,
     },
@@ -25,22 +25,40 @@ const styles : Record<any, SxProps> = {
         color:"black",
     },
     logoText1:{
-        
+        color: colors.white,
         textTransform:"uppercase",
-        fontSize:"1.5rem",
+        fontSize:"1.25rem",
+    },
+    logoText2:{
+        color: colors.white,
+        fontSize:"0.75rem",
     },
     navItems:{
+        display: { xs: "none", sm: "none", md: "flex", lg: "flex" },
         width:"60%",
         mr:0,
         pr:0,
-        display:"flex",
         flexDirection:"row",
+        justifyContent:"end"
     },
     navItem:{
-        mr: 4,
+        textTransform:"capitalize",
+        ml: 4,
         fontSize: "1.25rem",
         fontWeight: "200",
-        color: colors.black,
+        color: colors.white,
+        mixBlendMode: "difference",
+        textAlign:"center"
+    },
+    navItemSelected:{
+        border:'solid',
+        borderColor:colors.orange,
+        borderWidth:"1px",
+        textTransform:"capitalize",
+        ml: 4,
+        fontSize: "1.25rem",
+        fontWeight: "200",
+        color: colors.orange,
         mixBlendMode: "difference",
     },
     menuIcon:{

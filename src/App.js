@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 import { createBrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom';
 import './App.css';
 import Footer from './components/footer';
@@ -37,11 +38,12 @@ function App() {
       element:<Events/>,
     },
   ])
+  const [currentPage, changeCurrentPage] = useState(0)
   return (
    <> 
     
     
-      <Navbar/>
+      <Navbar selected={currentPage} route={changeCurrentPage}/>
       <RouterProvider router={router}/>
 
     </>

@@ -14,8 +14,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import ElevationScroll from "./ElevationScroll";
-import { Container } from "@mui/material";
 import styles from "./styles.ts";
 
 const navItems = [
@@ -44,7 +42,7 @@ const navItems = [
 function Navbar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -70,7 +68,6 @@ function Navbar(props) {
   return (
     <Box position={"static"} sx={styles.navbarMain}>
       <CssBaseline />
-      <ElevationScroll {...props}>
         <AppBar sx={styles.appbar} component="nav">
           <Toolbar>
             <Box
@@ -90,10 +87,11 @@ function Navbar(props) {
             <Box
               sx={styles.navItems}
             >
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 <Button
                   key={item.name}
-                  sx={styles.navItem}
+                  sx={index==props.selected ? styles.navItemSelected : styles.navItem}
+                  onClick={()=>props.change(index)}
                   href={item.link}
                 >
                   {item.name}
@@ -111,7 +109,6 @@ function Navbar(props) {
             </IconButton>
           </Toolbar>
         </AppBar>
-      </ElevationScroll>
       <Box component="nav">
         <Drawer
           container={container}
