@@ -15,35 +15,41 @@ function App() {
   const router = createBrowserRouter([
     {
       path:"/",
-      element:<Home/>,
+      element:<Navbar/>,
+      children:[
+        { 
+          path:"",
+          element:<Home/>
+        },
+        {
+          path:"aboutus",
+          element:<AboutUs/>
+        },
+        {
+          path:"contact",
+          element:<ContactPage/>
+        },
+        {
+          path:"office",
+          element:<OfficeBearers/>
+        },
+        {
+          path:"allevents",
+          element:<AllEvents/>,
+        },
+        {
+          path:"events",
+          element:<Events/>,
+        },
+      ]
     },
-    {
-      path:"/aboutus",
-      element:<AboutUs/>
-    },
-    {
-      path:"/contact",
-      element:<ContactPage/>
-    },
-    {
-      path:"/office",
-      element:<OfficeBearers/>
-    },
-    {
-      path:"/allevents",
-      element:<AllEvents/>,
-    },
-    {
-      path:"/events",
-      element:<Events/>,
-    },
+
   ])
-  const [currentPage, changeCurrentPage] = useState(0)
+  
   return (
    <> 
     
     
-      <Navbar selected={currentPage} route={changeCurrentPage}/>
       <RouterProvider router={router}/>
 
     </>

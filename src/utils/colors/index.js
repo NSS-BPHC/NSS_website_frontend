@@ -10,7 +10,7 @@ export default {
     green: "#28a745",
     teal: "#20c997",
     cyan: "#17a2b8",
-    white:"#fff",
+    white:"#ffffff",
     gray: "#6c757d",
     grayDark: "#343a40",
     primary: "#007bff",

@@ -15,6 +15,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import styles from "./styles.ts";
+import { useLocation } from "react-router-dom";
 
 const navItems = [
   {
@@ -42,7 +43,8 @@ const navItems = [
 function Navbar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  
+  const location = useLocation();
+
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -90,8 +92,7 @@ function Navbar(props) {
               {navItems.map((item, index) => (
                 <Button
                   key={item.name}
-                  sx={index==props.selected ? styles.navItemSelected : styles.navItem}
-                  onClick={()=>props.change(index)}
+                  sx={location.pathname === item.link ? styles.navItemSelected : styles.navItem}
                   href={item.link}
                 >
                   {item.name}
