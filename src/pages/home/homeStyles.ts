@@ -1,6 +1,6 @@
 export default {
     container:{
-        mt:100,
+        mt:10,
         ml:0,
     },
     swiper:{

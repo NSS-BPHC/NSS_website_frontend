@@ -12,8 +12,8 @@ const styles : Record<any, SxProps> = {
         backgroundColor:colors.grayDark,
     },
     logo:{
-        height: { xs: 30, sm: 80, md: 80 },
-        pl:5,
+        height: { xs: 50, sm: 80, md: 80 },
+        pl:{xs:1, sm:5},
         my: 2,
     },
     logoTextContainer:{
@@ -27,11 +27,11 @@ const styles : Record<any, SxProps> = {
     logoText1:{
         color: colors.white,
         textTransform:"uppercase",
-        fontSize:"1.25rem",
+        fontSize:{xs:"0.85rem",sm:"1.25rem"},
     },
     logoText2:{
         color: colors.white,
-        fontSize:"0.75rem",
+        fontSize:{xs:"0.65rem",sm:"0.75rem"},
     },
     navItems:{
         display: { xs: "none", sm: "none", md: "flex", lg: "flex" },
@@ -64,7 +64,7 @@ const styles : Record<any, SxProps> = {
     menuIcon:{
         mr: 2,
         display: { xs: "block", sm: "block", md: "none", lg: "none" },
-        color: "black",
+        color: colors.white,
         mixBlendMode: "difference",
     },
     mobileDrawer:{
