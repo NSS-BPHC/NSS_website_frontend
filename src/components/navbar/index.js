@@ -20,7 +20,7 @@ import { useLocation } from "react-router-dom";
 const navItems = [
   {
   name:"Home",
-  link:"/"
+  link:"/home"
   },
   {
     name:"Events",
